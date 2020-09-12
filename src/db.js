@@ -2,10 +2,15 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 
-mongoose.connect(process.env.MONGO_URL_PRODUCTION, {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-});
+mongoose.connect(
+  process.env.PRODUCTION
+    ? process.env.MONGO_URL_PRODUCTION
+    : process.env.MONGO_URL,
+  {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+  }
+);
 
 const db = mongoose.connection;
 
