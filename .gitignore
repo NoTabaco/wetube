@@ -119,5 +119,4 @@ package-lock.json
 uploads
 static
 build
-src
 .DS_Store
